@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +12,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class TasksTest {
 	
 	public WebDriver acessarAplicacao() {
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\tools-dev\\seleniumDrivers\\chromedriver.exe");
+			
 		WebDriver driver = new ChromeDriver();
 		driver.navigate().to("http://localhost:8001/tasks/");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
